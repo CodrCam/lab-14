@@ -23,29 +23,30 @@ function clearCart() {
   tableBody.innerHTML = '';
 }
 
-// TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
   const tableBody = document.querySelector('#cart tbody');
   for (let i = 0; i < state.cart.items.length; i++) {
     const item = state.cart.items[i];
     const row = document.createElement('tr');
     tableBody.appendChild(row);
+    const deleteCell = document.createElement('td');
     const quantityCell = document.createElement('td');
     const nameCell = document.createElement('td');
+    row.appendChild(deleteCell);
     row.appendChild(quantityCell);
     row.appendChild(nameCell);
+    deleteCell.innerHTML = '<a href="#">X</a>';
     quantityCell.textContent = item.quantity;
     nameCell.textContent = item.product;
   }
-
 }
 
-
 function removeItemFromCart(event) {
-  const itemName = event.target.parentNode.nextElementSibling.nextElementSibling.textContent;
+  const row = event.target.parentNode.parentNode;
+  const itemName = row.querySelector('td:last-child').textContent;
   state.cart.removeItem(itemName);
   state.cart.saveToLocalStorage();
-  showCart();
+  row.remove();
 }
 
 // This will initialize the page and draw the cart on screen

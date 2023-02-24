@@ -9,7 +9,7 @@ state.cart = new Cart([]);
 // (the things in the state.allProducts array) into the drop down list.
 function populateForm() {
 
-  //TODO **Done**: Add an <option> tag inside the form's select for each product
+  //* TODO **Done**: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
   for (let i in state.allProducts) {
     let optionTag = document.createElement('option');
@@ -59,7 +59,6 @@ function updateCartPreview() {
   cartContents.appendChild(newItem);
   console.log(newItem);
 }
-
 
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will

@@ -15,15 +15,15 @@ const Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
-  // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  //* TODO: Fill in this instance method to create a new CartItem and add it to this.items
   let newItem = new CartItem(product,quantity);
   this.items.push(newItem);
   console.log('items array', this.items)
 };
 
 Cart.prototype.saveToLocalStorage = function() {
-  // TODO: Fill in this instance method to save the contents of the cart to localStorage
-  // Convert the contents of the cart to a JSON string
+  //* TODO: Fill in this instance method to save the contents of the cart to localStorage
+  //* Convert the contents of the cart to a JSON string
   let cartContents = JSON.stringify(this.items);
 
   // Save the cart contents to local storage under the key "cart"
@@ -31,7 +31,7 @@ Cart.prototype.saveToLocalStorage = function() {
 };
 
 Cart.prototype.removeItem = function(item) {
-  // TODO: Fill in this instance method to remove one item from the cart.
+  //* TODO: Fill in this instance method to remove one item from the cart.
     // Find the index of the item in the cart
     let index = this.items.indexOf(item);
 
@@ -42,7 +42,7 @@ Cart.prototype.removeItem = function(item) {
 };
 
 Cart.prototype.updateCounter = function() {
-  // TODO: Update the cart count in the header nav with the number of items in the Cart
+  //* TODO: Update the cart count in the header nav with the number of items in the Cart
     // Find the cart count element in the header nav
     let cartCounter = document.getElementById('itemCount');
 
